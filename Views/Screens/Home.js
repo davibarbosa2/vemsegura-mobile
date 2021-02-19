@@ -1,12 +1,11 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { StyleSheet } from "react-native";
 
 export default function Home({ navigation }) {
   return (
     <View style={{ backgroundColor: "#fff", flex: 1 }}>
       <Image
-        source={require("../assets/images/undraw_welcoming_xvuq.png")}
+        source={require("../../assets/images/undraw_welcoming_xvuq.png")}
         style={{
           width: "100%",
           height: 300,
@@ -15,7 +14,7 @@ export default function Home({ navigation }) {
       />
       <View style={{ justifyContent: "flex-end", alignItems: "center" }}>
         <Image
-          source={require("../assets/images/logo-vemsegura.png")}
+          source={require("../../assets/images/logo-vemsegura.png")}
           style={{ height: 60, width: 70, marginBottom: 30 }}
         />
         <Text style={{ fontSize: 40, fontWeight: "bold" }}>Olá!</Text>
@@ -75,6 +74,7 @@ export default function Home({ navigation }) {
               borderColor: "#000",
               marginHorizontal: "5%",
             }}
+            onPress={() => navigation.navigate("Cadastro")}
           >
             <Text
               style={{

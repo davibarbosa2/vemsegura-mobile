@@ -2,19 +2,22 @@ import * as React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-export default function Login() {
+export default function Cadastro({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../../assets/images/undraw_mobile_login_ikmv.png")}
+        source={require("../../assets/images/undraw_authentication_fsn5.png")}
         style={{
           width: "100%",
-          height: 230,
+          height: 210,
+          marginTop: 10,
         }}
       />
-      <Text style={{ fontSize: 25, marginTop: 15 }}>Bem Vinda!</Text>
-      <Text style={{ fontSize: 16, color: "gray", marginTop: 20 }}>
-        Faça login para continuar
+      <Text style={{ fontSize: 22, marginTop: 10 }}>
+        Vamos realizar seu cadastro!
+      </Text>
+      <Text style={{ fontSize: 16, color: "gray", marginTop: 10 }}>
+        Preencha os campos com seus dados.
       </Text>
 
       <TextInput
@@ -29,7 +32,7 @@ export default function Login() {
       />
       <TextInput
         style={{
-          marginTop: 40,
+          marginTop: 20,
           borderBottomColor: "#ddd",
           borderBottomWidth: 1,
           paddingBottom: 20,
@@ -37,6 +40,26 @@ export default function Login() {
         placeholder="Senha"
         autoCorrect={false}
         secureTextEntry={true}
+      />
+      <TextInput
+        style={{
+          marginTop: 20,
+          borderBottomColor: "#ddd",
+          borderBottomWidth: 1,
+          paddingBottom: 20,
+        }}
+        placeholder="E-mail"
+        autoCorrect={false}
+      />
+      <TextInput
+        style={{
+          marginTop: 20,
+          borderBottomColor: "#ddd",
+          borderBottomWidth: 1,
+          paddingBottom: 20,
+        }}
+        placeholder="Telefone"
+        autoCorrect={false}
       />
 
       <View
@@ -54,7 +77,7 @@ export default function Login() {
             borderRadius: 30,
             alignItems: "center",
             justifyContent: "center",
-            marginTop: 30,
+            marginTop: 0,
           }}
         >
           <Text
@@ -65,13 +88,11 @@ export default function Login() {
               fontWeight: "bold",
             }}
           >
-            Fazer Login
+            Finalizar Cadastro
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{ marginTop: 20 }}>Esqueceu sua senha?</Text>
-        </TouchableOpacity>
-        <View style={{ flexDirection: "row", marginTop: 60 }}>
+        <Text style={{ fontSize: 16, marginTop: 10 }}>Ou</Text>
+        <View style={{ flexDirection: "row", marginTop: 20 }}>
           <TouchableOpacity
             style={{
               height: 40,
@@ -118,11 +139,12 @@ export default function Login() {
         </View>
 
         <View style={{ flexDirection: "row", marginTop: 40 }}>
-          <Text style={{ color: "gray" }}>Não possui uma conta?</Text>
+          <Text style={{ color: "gray" }}>Já possui uma conta?</Text>
           <TouchableOpacity
             style={{ justifyContent: "center", alignItems: "center" }}
+            onPress={() => navigation.navigate("Login")}
           >
-            <Text style={{ fontWeight: "bold" }}> Cadastre-se já</Text>
+            <Text style={{ fontWeight: "bold" }}> Faça já o login</Text>
           </TouchableOpacity>
         </View>
       </View>
