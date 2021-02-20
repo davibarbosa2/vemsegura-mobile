@@ -1,8 +1,9 @@
 import * as React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
+import Menu from "../Components/Menu";
 
-export default function Login({ navigation }) {
+export default function Login() {
   return (
     <View style={styles.container}>
       <Image
@@ -12,11 +13,17 @@ export default function Login({ navigation }) {
           height: 230,
         }}
       />
-      <Text style={{ fontSize: 25, marginTop: 15 }}>Bem Vinda!</Text>
-      <Text style={{ fontSize: 16, color: "gray", marginTop: 20 }}>
-        Faça login para continuar
+      <Text
+        style={{
+          fontSize: 25,
+          marginTop: 25,
+          fontWeight: "bold",
+          textAlign: "center",
+          marginBottom: 25,
+        }}
+      >
+        Bem Vinda!
       </Text>
-
       <TextInput
         style={{
           marginTop: 40,
@@ -71,62 +78,8 @@ export default function Login({ navigation }) {
         <TouchableOpacity>
           <Text style={{ marginTop: 20 }}>Esqueceu sua senha?</Text>
         </TouchableOpacity>
-        <View style={{ flexDirection: "row", marginTop: 60 }}>
-          <TouchableOpacity
-            style={{
-              height: 40,
-              width: 40,
-              borderRadius: 40 / 2,
-              backgroundColor: "#3f51b5",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ fontSize: 30, fontWeight: "bold", color: "#fff" }}>
-              f
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              height: 40,
-              width: 40,
-              borderRadius: 40 / 2,
-              backgroundColor: "#f44336",
-              marginHorizontal: 10,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
-              G
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              height: 40,
-              width: 40,
-              borderRadius: 40 / 2,
-              backgroundColor: "#1565c0",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
-              In
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ flexDirection: "row", marginTop: 40 }}>
-          <Text style={{ color: "gray" }}>Não possui uma conta?</Text>
-          <TouchableOpacity
-            style={{ justifyContent: "center", alignItems: "center" }}
-            onPress={() => navigation.navigate("Cadastro")}
-          >
-            <Text style={{ fontWeight: "bold" }}> Cadastre-se já</Text>
-          </TouchableOpacity>
-        </View>
       </View>
+      <Menu />
     </View>
   );
 }
